@@ -1,0 +1,7 @@
+#warmUpSet, #warmUpMoveNames, #workoutSet,
+#workoutMoveNames, #coolDownSet,
+#coolDownMoveNames, #workoutTimer, #confirmWorkout,
+#warmUpSetConfirm, #workoutSetConfirm, #coolDownSetConfirm
+{
+  display: none;
+}

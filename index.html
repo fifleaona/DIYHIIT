@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>DIY HIIT Plan</title>
+  
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="main">
+    <h1>Customizable HIIT Workout Plan</h1>
+    <div id="initiate">
+	  <div id="workoutSections">
+	    <form id="setupSections">
+	      <label>Select the components of your work out:</label><br>
+	      <input type="checkbox" name="warmUp" id="warmUp" value="warmUp"> 
+	  	    <label for="warmUp">Warm Up</label><br>
+		
+		  <input type="checkbox" name="workout" id="workout" value="workout">
+		    <label for="workout">Work Out</label><br>
+		  
+		  <input type="checkbox" name="coolDown" id="coolDown" value="coolDown">
+		    <label for="coolDown">Cool Down</label><br>
+		  
+		  <input type="button" name="toFirstSection" id="toFirstSection" value="Next">
+	    </form>
+      </div>
+	  
+	  <div id="setupWorkout">
+	  <form id="setup">
+	    <div id="warmUpSet">
+		  <h2>Warm Up</h2>
+		  <label for="warmUpNumMoves">Number of moves in one round</label>
+		    <input type="number" name="warmUpNumMoves" id="warmUpNumMoves"><br>
+			
+		  <label for="warmUpNumRounds">Number of rounds</label>
+		    <input type="number" name="warmUpNumRounds" id="warmUpNumRounds"><br>
+			
+		  <label for="warmUpMoveLength">Length of movement (in seconds)</label>
+		   <input type="number" name="warmUpMoveLength" id="warmUpMoveLength"><br>
+		   
+		  <label for="warmUpRestLength">Length of rest (in seconds)</label>
+		    <input type="number" name="warmUpRestLength" id="warmUpRestLength"><br>
+	      
+		  <input type="button" name="setWarmUpMoveNames" id="setWarmUpMoveNames" value="Next">
+		</div>
+		
+		<div id="warmUpMoveNames">
+		  <h2>Warm Up</h2>
+		  <span id="warmUpMoveInput"></span>
+		  <input type="button" name="confirmWarmUpNames" id="confirmWarmUpNames" value="Next">
+		</div>
+	  
+	    <div id="workoutSet">
+		  <h2>Workout</h2>
+		  <label for="workoutNumMoves">Number of moves in one round</label>
+		    <input type="number" name="workoutNumMoves" id="workoutNumMoves"><br>
+			
+		  <label for="workoutNumRounds">Number of rounds</label>
+		    <input type="number" name="workoutNumRounds" id="workoutNumRounds"><br>
+			
+		  <label for="workoutMoveLength">Length of movement (in seconds)</label>
+		    <input type="number" name="workoutMoveLength" id="workoutMoveLength"><br>
+			
+		  <label for="workoutRestLength">Length of rest (in seconds)</label>
+		    <input type="number" name="workoutRestLength" id="workoutRestLength"><br>
+	    
+		  <input type="button" name="setWorkoutMoveNames" id="setWorkoutMoveNames" value="Next">
+		</div>
+		
+		<div id="workoutMoveNames">
+		  <h2>Workout</h2>
+		  <span id="workoutMoveInput"></span>
+		  <input type="button" name="confirmWorkoutNames" id="confirmWorkoutNames" value="Next">
+		</div>
+	  
+	    <div id="coolDownSet">
+		  <h2>Cool Down</h2>
+		  <label for="coolDownNumMoves">Number of moves in one round</label>
+		    <input type="number" name="coolDownNumMoves" id="coolDownNumMoves"><br>
+		  
+		  <label for="coolDownNumRounds">Number of rounds</label>
+		    <input type="number" name="coolDownNumRounds" id="coolDownNumRounds"><br>
+		  
+		  <label for="coolDownMoveLength">Length of one move</label>
+		    <input type="number" name="cooldownmovelength" id="coolDownMoveLength"><br>
+		  
+		  <label for="coolDownRestLength">Length of rest</label>
+		    <input type="number" name="coolDownRestLength" id="coolDownRestLength"><br>
+	    
+		  <input type="button" name="setCoolDownMoveNames" id="setCoolDownMoveNames" value="Next">
+		</div>
+		
+		<div id="coolDownMoveNames">
+		  <h2>Cool Down</h2>
+		  <span id="coolDownMoveInput"></span>
+		  <input type="button" name="confirmCoolDownNames" id="confirmCoolDownNames" value="Next">
+		</div>
+	  </form>
+	  </div>
+	  
+	  <div id="confirmWorkout">
+	    <h2>Confirmation</h2>
+	    <form id="confirmation">
+		  <div id="warmUpSetConfirm">
+		    <h3>Confirm: Warm Up</h3>
+			<span id="warmUpSetNames"></span>
+			Total length of warm up: <span id="warmUpSetMath"></span>
+		  </div>
+		  
+		  <div id="workoutSetConfirm">
+		    <h3>Confirm: Workout</h3>
+			<span id="workoutSetNames"></span>
+			Total length of workout: <span id="workoutSetMath"></span>
+		  </div>
+		  
+		  <div id="coolDownSetConfirm">
+		    <h3>Confirm: Cool Down</h3>
+			<span id="coolDownSetNames"></span>
+			Total length of cool down: <span id="coolDownSetMath"></span>
+		  </div>
+		  
+		  <div>
+		    <br>
+		    Total length of workout: <span id="totalMath"></span><br>
+			You'll be done at: <span id="workoutEndTime"></span>
+		  </div>
+		  
+		  <input type="button" name="cancel" id="cancel" value="Make Change">
+		  <input type="button" name="submit" id="submit" value="Confirm">
+		</form>
+	  </div>
+	  
+	</div>
+	
+	<div id="workoutTimer">
+	  <span id="moveName"></span>
+	  <span id="timer"></span>
+	</div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+  <script src="js/hiit.js"></script>
+</body>
+
+</html>
